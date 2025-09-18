@@ -1,0 +1,91 @@
+I want you to build a simple functional prototype called EcoLedger – “Trustworthy Carbon, Transparent Future”. This prototype is for a hackathon, so focus on clarity and demo value over perfection.
+
+🎯 Goal:
+
+A web-based dashboard where NGOs can record mangrove planting activities, get verified carbon credits, and where buyers can view & purchase those credits. Blockchain will be simulated (not fully implemented) but should look real enough for demo purposes.
+
+1. Frontend (React / Next.js with Tailwind CSS)
+
+Landing page with project name + login options (NGO / Buyer).
+
+NGO Dashboard:
+
+Form to input plantation activity (e.g., number of mangroves planted, GPS location, upload image).
+
+On submit → credits are calculated (rule: 1 ton CO₂ = 1 credit; approximate conversion = 100 mangroves = 1 credit).
+
+Display “Credits Earned” on NGO profile.
+
+Buyer Dashboard:
+
+List of available credits from NGOs.
+
+Option to “Buy Credits” → simulate with button click and fake transaction.
+
+Use Google Maps Embed API to display plantation location (based on NGO input).
+
+2. Backend (Flask or Node.js – whichever easier)
+
+Handle two user roles: NGO and Buyer.
+
+Store data in simple DB (SQLite or Firebase or even JSON). Fields:
+
+NGO_ID, Plantation_Data, GPS_Location, Credits_Earned, Status (Verified/Pending).
+
+Add API endpoint:
+
+/add_plantation → NGO adds plantation data.
+
+/get_credits → Fetch NGO credits.
+
+/marketplace → Fetch available credits for buyers.
+
+/buy_credit → Buyer “purchases” credits (simulate by transferring ownership).
+
+3. Blockchain Simulation
+
+Instead of real blockchain, create a Ledger Page:
+
+Every transaction (NGO earns credit / Buyer buys credit) → logged with:
+
+Transaction ID (random unique hash like 0xA23F9...).
+
+Date & Time.
+
+NGO ID.
+
+Credits Earned / Sold.
+
+Display this as a blockchain-like table.
+
+4. Verification
+
+When NGO submits plantation, mark it as “Pending Verification.”
+
+Add a “Verify” button (for admin/judge demo).
+
+On click → mark as ✅ Verified and credits become available in marketplace.
+
+5. UI Flow for Demo
+
+NGO logs in → adds plantation data → uploads proof → system shows “10 credits earned, Pending Verification.”
+
+Admin verifies → credits move to NGO’s balance.
+
+Buyer logs in → sees credits in marketplace → clicks “Buy” → transaction shows in ledger.
+
+6. Extra Notes
+
+Keep design clean, hackathon-ready (use Tailwind CSS).
+
+Fake payment can just show “Payment Successful” popup.
+
+Deploy on Replit and make sure it runs with one click.
+
+💡 Final Output Needed:
+
+A working web app with NGO & Buyer dashboards.
+
+Simulated blockchain ledger page showing transactions.
+
+Simple and fast enough to demo live in 3–4 minutes.
